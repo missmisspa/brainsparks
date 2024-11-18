@@ -1,0 +1,46 @@
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: #f9f9f9;
+    margin: 0;
+    color: #262626;
+}
+
+/* Sign Up Container */
+.signup-container {
+    background-color: #f9f9f9;
+    padding: 20px;
+}
+
+.card {
+    border-radius: 12px;
+}
+
+.card h3 {
+    font-weight: 600;
+    color: #333;
+}
+
+/* Buttons */
+.btn-primary-signup {
+    color: #fefefe;
+    background-color: #73d4eb;
+    border: none;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.btn-primary-signup:hover {
+    color: #fefefe;
+    background-color: #58b9d0;
+    transform: scale(1.02);
+}
+
+/* Links */
+a {
+    color: #73d4eb;
+    text-decoration: none;
+}
+
+a:hover {
+    color: #58b9d0;
+    text-decoration: none;
+}
