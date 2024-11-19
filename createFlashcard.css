@@ -41,6 +41,41 @@ input.form-control, textarea.form-control {
     border-color: #dc3545;
 }
 
+.d-flex {
+    display: flex;
+    align-items: flex-start;
+}
+
+.gap-3 {
+    gap: 1rem;
+}
+
+.btn-secondary{
+    color: #fefefe;
+    background-color: #ffc23b;
+    border: none;
+}
+
+.btn-secondary:hover{
+    color: #fefefe;
+    background-color: #E6A02E;
+    border: none;
+}
+
+.btn-danger{
+    color: #fefefe; 
+    background-color: #ff7254;
+    text-decoration: none;
+    border: none;
+}
+
+.btn-danger:hover{
+    color: #fefefe;
+    background-color: #CC5C44;
+    text-decoration: none;
+    border: none;
+}
+
 
 .btn-primary-submit {
     color: #fefefe;
@@ -49,8 +84,29 @@ input.form-control, textarea.form-control {
     transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
-.btn-primary-submit:hover{
+.btn-primary-submit:hover {
     color: #fefefe;
     background-color: #065533;
     transform: scale(1.02);
 }
+
+.btn-outline-success{
+    color: #fefefe;
+    background-color: #73d4eb;
+    border: none;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.btn-outline-success:hover{
+    color: #fefefe;
+    background-color: #58b9d0;
+    border: none;
+    transform: scale(1.02);
+}
+
+/* 
+textarea,
+input {
+    height: calc(2.5em + 0.75rem + 2px); 
+    resize: none;
+} */
