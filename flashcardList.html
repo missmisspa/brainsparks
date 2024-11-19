@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Flashcard Set Management</title>
+    <title>Quick Recall  List</title>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
     <link href="flashcardList.css" rel="stylesheet">
 </head>
@@ -12,13 +12,8 @@
 <div class="container my-5">
     <div class="card shadow-lg border-0 p-4">
         <h3 class="text-center mb-4">Flashcard Sets</h3>
-        
-        <!-- Flashcard Set List -->
         <div id="flashcardList" class="list-group">
-            <!-- Flashcard sets will be displayed here dynamically -->
         </div>
-
-        <!-- Add New Flashcard Set Button -->
         <div class="text-center mt-3">
             <button class="btn btn-primary" onclick="addFlashcardSet()">Add New Flashcard Set</button>
         </div>
@@ -28,7 +23,6 @@
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
 <script>
-// Sample Data (Pre-Given Flashcard Sets)
 const flashcardSets = [
     {
         id: 1,
@@ -50,10 +44,9 @@ const flashcardSets = [
     }
 ];
 
-// Function to render the flashcard sets
 function renderFlashcardSets() {
     const flashcardList = document.getElementById('flashcardList');
-    flashcardList.innerHTML = ''; // Clear the list before re-rendering
+    flashcardList.innerHTML = ''; 
 
     flashcardSets.forEach(set => {
         const listItem = document.createElement('div');
@@ -74,7 +67,6 @@ function renderFlashcardSets() {
     });
 }
 
-// Add a new flashcard set (for demonstration purposes)
 function addFlashcardSet() {
     const newSet = {
         id: flashcardSets.length + 1,
@@ -83,52 +75,42 @@ function addFlashcardSet() {
         cards: []
     };
     flashcardSets.push(newSet);
-    renderFlashcardSets(); // Re-render after adding
+    renderFlashcardSets();
 }
 
-// Edit a flashcard set
 function editFlashcardSet(setId) {
     const set = flashcardSets.find(f => f.id === setId);
 
-    // Populate modal with current data
     document.getElementById('editSetTitle').value = set.title;
     document.getElementById('editSetDescription').value = set.description;
     
-    // Store the id for later use
     document.getElementById('editModal').dataset.setId = setId;
 
-    // Show the modal
     const modal = new bootstrap.Modal(document.getElementById('editModal'));
     modal.show();
 }
 
-// Update the flashcard set
 function updateFlashcardSet() {
     const setId = document.getElementById('editModal').dataset.setId;
     const set = flashcardSets.find(f => f.id === parseInt(setId));
 
-    // Get updated values from the form
     set.title = document.getElementById('editSetTitle').value;
     set.description = document.getElementById('editSetDescription').value;
 
-    // Re-render the list of flashcard sets
     renderFlashcardSets();
 
-    // Close the modal
     const modal = bootstrap.Modal.getInstance(document.getElementById('editModal'));
     modal.hide();
 }
 
-// Delete a flashcard set
 function deleteFlashcardSet(setId) {
     const index = flashcardSets.findIndex(f => f.id === setId);
     if (index !== -1) {
-        flashcardSets.splice(index, 1); // Remove the set
-        renderFlashcardSets(); // Re-render after deletion
+        flashcardSets.splice(index, 1); 
+        renderFlashcardSets(); 
     }
 }
 
-// Initial render
 renderFlashcardSets();
 </script>
 
